@@ -150,6 +150,14 @@ namespace :install do
     brew_install 'tmux', :requires => '>= 1.8'
   end
 
+  desc 'Install Sublime Text 3'
+  task :sublime do
+    step 'sublime'
+    unless app? 'Sublime Text'
+      brew_cask_install 'sublime-text3'
+    end
+  end
+
 end
 
 def filemap(map)
@@ -165,6 +173,8 @@ COPIED_FILES = filemap(
 
 LINKED_FILES = filemap(
   'tmux.conf'     => '~/.tmux.conf',
+  'sublime/Package Control.sublime-settings' => "~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+  'sublime/Preferences.sublime-settings' => "~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 )
 
 desc 'Install these config files.'
@@ -173,6 +183,7 @@ task :install do
   Rake::Task['install:brew_cask'].invoke
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
+  Rake::Task['install:sublime'].invoke
 
   step 'symlink'
 
