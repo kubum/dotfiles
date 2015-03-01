@@ -4,9 +4,14 @@
 	],
 	"installed_packages":
 	[
+		"ExpandRegion",
 		"Git",
 		"GitGutter",
+		"HTML Mustache",
 		"Package Control",
-		"RailsCasts Colour Scheme"
+		"Pretty JSON",
+		"RailsCasts Colour Scheme",
+		"Ruby Hash Converter",
+		"SublimeCodeIntel"
 	]
 }
