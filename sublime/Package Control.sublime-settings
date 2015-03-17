@@ -4,14 +4,18 @@
 	],
 	"installed_packages":
 	[
+		"Better CoffeeScript",
+		"ColorPicker",
 		"ExpandRegion",
 		"Git",
 		"GitGutter",
+		"Highlighter",
 		"HTML Mustache",
 		"Package Control",
 		"Pretty JSON",
 		"RailsCasts Colour Scheme",
 		"Ruby Hash Converter",
+		"SCSS",
 		"SublimeCodeIntel"
 	]
 }
