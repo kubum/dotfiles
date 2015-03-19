@@ -7,7 +7,6 @@
 		"Better CoffeeScript",
 		"ColorPicker",
 		"ExpandRegion",
-		"Git",
 		"GitGutter",
 		"Highlighter",
 		"HTML Mustache",
@@ -15,7 +14,9 @@
 		"Pretty JSON",
 		"RailsCasts Colour Scheme",
 		"Ruby Hash Converter",
+		"RubyTest",
 		"SCSS",
-		"SublimeCodeIntel"
+		"SublimeCodeIntel",
+		"SublimeGit"
 	]
 }
