@@ -150,6 +150,12 @@ namespace :install do
     brew_install 'tmux', :requires => '>= 1.8'
   end
 
+  desc 'Install fzf'
+  task :fzf do
+    step 'fzf'
+    brew_install 'fzf'
+  end
+
   desc 'Install Sublime Text 3'
   task :sublime do
     step 'sublime'
@@ -183,6 +189,7 @@ task :install do
   Rake::Task['install:brew_cask'].invoke
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
+  Rake::Task['install:fzf'].invoke
   Rake::Task['install:sublime'].invoke
 
   step 'symlink'
