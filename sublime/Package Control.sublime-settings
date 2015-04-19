@@ -4,8 +4,11 @@
 	],
 	"installed_packages":
 	[
+		"AdvancedNewFile",
+		"All Autocomplete",
 		"Better CoffeeScript",
 		"ColorPicker",
+		"DocBlockr",
 		"ExpandRegion",
 		"GitGutter",
 		"Highlighter",
@@ -14,6 +17,7 @@
 		"Pretty JSON",
 		"RailsCasts Colour Scheme",
 		"Ruby Hash Converter",
+		"Ruby Markers",
 		"RubyTest",
 		"SCSS",
 		"SublimeGit"
