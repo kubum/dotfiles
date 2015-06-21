@@ -156,6 +156,12 @@ namespace :install do
     brew_install 'fzf'
   end
 
+  desc 'Install z'
+  task :z do
+    step 'z'
+    brew_install 'z'
+  end
+
   desc 'Install Sublime Text 3'
   task :sublime do
     step 'sublime'
@@ -191,6 +197,7 @@ task :install do
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
   Rake::Task['install:fzf'].invoke
+  Rake::Task['install:z'].invoke
   Rake::Task['install:sublime'].invoke
 
   step 'symlink'
