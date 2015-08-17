@@ -184,7 +184,8 @@ COPIED_FILES = filemap(
 )
 
 LINKED_FILES = filemap(
-  'tmux.conf'     => '~/.tmux.conf',
+  'tmux.conf' => '~/.tmux.conf',
+  'gemrc' => '~/.gemrc',
   'sublime/Package Control.sublime-settings' => "~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
   'sublime/Preferences.sublime-settings' => "~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
   'sublime/Default (OSX).sublime-mousemap' => "~/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-mousemap",
