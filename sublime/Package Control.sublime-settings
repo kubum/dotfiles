@@ -6,8 +6,10 @@
 	[
 		"All Autocomplete",
 		"Better CoffeeScript",
+		"BracketHighlighter",
 		"ColorPicker",
 		"DocBlockr",
+		"Dockerfile Syntax Highlighting",
 		"ExpandRegion",
 		"GitGutter",
 		"Highlighter",
