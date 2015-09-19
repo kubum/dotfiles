@@ -22,6 +22,12 @@ def version_match?(requirement, version)
   Gem::Dependency.new('', requirement).match?('', version)
 end
 
+def install_github_bundle(user, package)
+  unless File.exist? File.expand_path("~/.vim/bundle/#{package}")
+    sh "git clone https://github.com/#{user}/#{package} ~/.vim/bundle/#{package}"
+  end
+end
+
 def brew_cask_install(package, *options)
   output = `brew cask info #{package}`
   return unless output.include?('Not installed')
@@ -161,6 +167,19 @@ namespace :install do
     step 'z'
     brew_install 'z'
   end
+  
+  desc 'Install vim'
+  task :vim do
+    step 'vim'
+    brew_install 'vim'
+  end
+
+  desc 'Install Vundle'
+  task :vundle do
+    step 'vundle'
+    install_github_bundle 'gmarik', 'vundle'
+    sh '~/bin/vim -c "PluginInstall!" -c "q" -c "q"'
+  end
 
   desc 'Install Sublime Text 3'
   task :sublime do
@@ -186,6 +205,7 @@ COPIED_FILES = filemap(
 LINKED_FILES = filemap(
   'tmux.conf' => '~/.tmux.conf',
   'gemrc' => '~/.gemrc',
+  'vimrc' => '~/.vimrc',
   'sublime/Package Control.sublime-settings' => "~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
   'sublime/Preferences.sublime-settings' => "~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
   'sublime/Default (OSX).sublime-mousemap' => "~/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-mousemap",
@@ -199,6 +219,7 @@ task :install do
   Rake::Task['install:tmux'].invoke
   Rake::Task['install:fzf'].invoke
   Rake::Task['install:z'].invoke
+  Rake::Task['install:vim'].invoke
   Rake::Task['install:sublime'].invoke
 
   step 'symlink'
@@ -210,6 +231,8 @@ task :install do
   COPIED_FILES.each do |orig, copy|
     cp orig, copy, :verbose => true unless File.exist?(copy)
   end
+
+  Rake::Task['install:vundle'].invoke
 
   step 'iterm2 colorschemes'
   colorschemes = `defaults read com.googlecode.iterm2 'Custom Color Presets'`
