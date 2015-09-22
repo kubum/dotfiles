@@ -167,7 +167,7 @@ namespace :install do
     step 'z'
     brew_install 'z'
   end
-  
+
   desc 'Install vim'
   task :vim do
     step 'vim'
@@ -177,7 +177,7 @@ namespace :install do
   desc 'Install Vundle'
   task :vundle do
     step 'vundle'
-    install_github_bundle 'gmarik', 'vundle'
+    install_github_bundle 'VundleVim', 'Vundle.vim'
     sh '~/bin/vim -c "PluginInstall!" -c "q" -c "q"'
   end
 

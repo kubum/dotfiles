@@ -74,3 +74,8 @@ set mouse=a
 " Hightlight 80 chars
 set cc=80
 
+" Set Leader
+let mapleader=","
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
