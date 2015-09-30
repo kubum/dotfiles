@@ -27,6 +27,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-bundler'
 Plugin 'wincent/command-t'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,8 +61,9 @@ set grepprg=ack
 " GitGutter
 set updatetime=1000 "default: 4000
 
-
+" NERDTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 map <up> <nop>
 map <down> <nop>
